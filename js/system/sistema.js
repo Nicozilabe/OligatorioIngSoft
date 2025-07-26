@@ -7,8 +7,8 @@ class Sistema {
     alert("Sistema iniciado");
   }
 
-  cargarHeader(tipo) {
 
+<<<<<<< HEAD
     if(tipo === "Index") {
         dqs("#hT").style.display = "none";
         dqs("#hI").style.display = "block";
@@ -25,4 +25,8 @@ class Sistema {
     }
     
   }
+=======
+
+ 
+>>>>>>> 186da367df5adb08eb1cf5be6612924c548fc0e7
 }
