@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mapa fijo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/contacto.css" />
+
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div></div>
+    </header>
+    <main>
+      <section>
+        <div>
+          <h2>Nuestra información.</h2>
+          <p>
+            Para más información, contáctanos a través de nuestras redes
+            sociales.
+          </p>
+        </div>
+        <div>
+          <h2>Donde encontrarnos.</h2>
+          <div id="map"></div>
+        </div>
+        <div>
+            <form id="contactoForm">
+              <div>
+              <label for="nombContacto">Nombre:</label>
+              <input type="text" id="nombContacto" name="nombre" required />
+            </div>
+            <div>
+              <label for="ApeContacto">Apellido:</label>
+              <input type="tel" id="ApeContacto" name="telefono" required />
+            <div>
+              <label for="emailContacto">Email:</label>
+              <input type="email" id="emailContacto" name="email" required />
+            </div>
+            <div>
+              <label for="mensgContacto">Mensaje:</label>
+              <textarea id="mensgContacto" name="mensaje" required></textarea>
+            </div>  
+            <button type="submit">Enviar</button>
+            </form>
+            
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="../js/script/contacto.js"></script>
+  </body>
+</html>

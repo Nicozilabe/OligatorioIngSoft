@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar turno</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/reservas.css">
+    <script src="js/system/sistema.js"></script>
+    <script src="js/script/index.js"></script>
+    <script src="js/clases/barbero.js"></script>
+    <script src="js/clases/servicio.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Reserve su turno</h1>
+    </header>
+    <main>
+        <section>
+            <div>
+                <form id="formReservas">
+                    <div>
+                        <label for="nombreServ">Nombre:</label>
+                        <input id="nombreServ" type="text" required>
+                    </div>   
+                    <div>
+                        <label for="emailServ">Email:</label>
+                        <input id="emailServ" type="text" required>
+                    </div>
+                
+                    <div>
+                        <label for="telefonoServ">Teléfono:</label>
+                        <input id="telefonoServ" type="text" required>
+                    </div>
+                    <div>
+                        <label for="horaServ">Hora:</label>
+                        <input id="horaServ" type="text" required>
+                    </div>
+                    <div>
+                        <p>Selecciona los servicios:</p>
+                        <div id="contenedorServicios">
+
+                        </div>
+                    </div>
+                    <div>
+                        <label for="barberoServ">Barbero:</label>
+                        <select name="barberoServ" id="barberoServ">
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="" type="">Fecha</label>
+                        <input type="date" name="" id="" required>
+                    </div>
+                    <input type="checkbox" name="checkServ" id="checkServ">
+                    <label for="checkServ">Confirmación</label>
+                    <input type="button" value="Reservar" id="btnReservar">
+                </form> 
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <a href="https://x.com">
+                <img src="../img/logos/x_logo.png" alt="Logo X" />
+            </a>
+            <a href="https://www.instagram.com">
+                <img src="../img/logos/ig_logo.png" alt="Logo Instagram" />
+            </a>
+            <a href="https://www.youtube.com">
+                <img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" />
+            </a>
+            <a href="https://www.linkedin.com">
+                <img src="../img/logos/in_logo.png" alt="Logo LinkedIn" />
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
