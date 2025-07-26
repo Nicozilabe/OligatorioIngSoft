@@ -17,36 +17,61 @@
 
     </header>
     <main>
-        <form id="formReservas">
-            <label for="nombreServ">Nombre:</label>
-            <input id="nombreServ" type="text">
+        <section>
+            <form id="formReservas">
+                <div>
+                    <label for="nombreServ">Nombre:</label>
+                    <input id="nombreServ" type="text">
+                </div>   
+                <div>
+                    <label for="emailServ">Email:</label>
+                    <input id="emailServ" type="text">
+                </div>
+                
+                <div>
+                    <label for="telefonoServ">Teléfono:</label>
+                    <input id="telefonoServ" type="text">
+                </div>
+                
+                <div>
+                    <label for="horaServ">Hora:</label>
+                    <input id="horaServ" type="text">
+                </div>
 
-            <label for="emailServ">Email:</label>
-            <input id="emailServ" type="text">
+                <div>
+                    <p>Selecciona los servicios:</p>
+                    <div id="contenedorServicios">
 
-            <label for="telefonoServ">Teléfono:</label>
-            <input id="telefonoServ" type="text">
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="barberoServ">Barbero:</label>
+                    <select name="barberoServ" id="barberoServ">
 
-            <label for="horaServ">Hora:</label>
-            <input id="horaServ" type="text">
-
-            <p>Selecciona los servicios:</p>
-            <div id="contenedorServicios">
-
-            </div>
-
-            <label for="barberoServ">Barbero:</label>
-            <select name="barberoServ" id="barberoServ">
-
-            </select>
-
-            <input type="checkbox" name="checkServ" id="checkServ">
-            <label for="checkServ">Confirmación</label>
-            <input type="button" value="Reservar" id="btnReservar">
-        </form>
+                    </select>
+                </div>
+                <input type="checkbox" name="checkServ" id="checkServ">
+                <label for="checkServ">Confirmación</label>
+                <input type="button" value="Reservar" id="btnReservar">
+            </form>
+        </section>
     </main>
     <footer>
-
+        <div>
+            <a href="https://x.com">
+               <img src="../img/x_logo.png" alt="Logo X"> 
+            </a>
+            <a href="https://www.instagram.com">
+               <img src="../img/ig_logo.png" alt="Logo Instagram"> 
+            </a>
+            <a href="https://www.youtube.com">
+               <img src="../img/yt_logo.jpeg" alt="Logo Youtube"> 
+            </a>
+            <a href="https://www.linkedin.com">
+               <img src="../img/in_logo.png" alt="Logo LinkedIn"> 
+            </a>      
+        </div>
     </footer>
 </body>
 
