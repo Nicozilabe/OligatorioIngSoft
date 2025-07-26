@@ -6,7 +6,7 @@ function dqs(valor){
 
 window.addEventListener('load', () => {
     cargarEventos();  
-    sistema.cargarHeader();
+    sistema.cargarHeader("Index");
 })
 
 function cargarEventos() {
