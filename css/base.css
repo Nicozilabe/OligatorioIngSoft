@@ -1,10 +1,34 @@
 /* definir constantes ej colores border radius, paddings, etc. */
 :root {
-  --color-primary: #3498db;
-  --color-secondary: #2ecc71;
-  --color-accent: #e74c3c;
+  --color-naranja: #FEBA43;
+  --color-amarilloPatito: #FFF8E6;
+  --color-negro: #0D0D12;
+  --color-grisClarito: #F2F2F2;
+  --color-blanco: #FFFFFF;
   --border-radius: 4px;
   --padding-small: 8px;
   --padding-medium: 16px;
   --padding-large: 24px;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+
+/* header{
+
+}
+nav ul{
+
+}
+nav ul li{
+
+}
+
+
+footer{
+
+} */
