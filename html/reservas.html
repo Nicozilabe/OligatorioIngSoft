@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar</title>
+    <title>Reservar turno</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/reservas.css">
     <script src="js/system/sistema.js"></script>
@@ -11,50 +11,52 @@
     <script src="js/clases/barbero.js"></script>
     <script src="js/clases/servicio.js"></script>
 </head>
-
 <body>
     <header>
-
+        <h1>Reserve su turno</h1>
     </header>
     <main>
         <section>
-            <form id="formReservas">
-                <div>
-                    <label for="nombreServ">Nombre:</label>
-                    <input id="nombreServ" type="text">
-                </div>   
-                <div>
-                    <label for="emailServ">Email:</label>
-                    <input id="emailServ" type="text">
-                </div>
-                
-                <div>
-                    <label for="telefonoServ">Teléfono:</label>
-                    <input id="telefonoServ" type="text">
-                </div>
-                
-                <div>
-                    <label for="horaServ">Hora:</label>
-                    <input id="horaServ" type="text">
-                </div>
-
-                <div>
-                    <p>Selecciona los servicios:</p>
-                    <div id="contenedorServicios">
-
+            <div>
+                <form id="formReservas">
+                    <div>
+                        <label for="nombreServ">Nombre:</label>
+                        <input id="nombreServ" type="text" required>
+                    </div>   
+                    <div>
+                        <label for="emailServ">Email:</label>
+                        <input id="emailServ" type="text" required>
                     </div>
-                </div>
                 
-                <div>
-                    <label for="barberoServ">Barbero:</label>
-                    <select name="barberoServ" id="barberoServ">
+                    <div>
+                        <label for="telefonoServ">Teléfono:</label>
+                        <input id="telefonoServ" type="text" required>
+                    </div>
+                    <div>
+                        <label for="horaServ">Hora:</label>
+                        <input id="horaServ" type="text" required>
+                    </div>
+                    <div>
+                        <p>Selecciona los servicios:</p>
+                        <div id="contenedorServicios">
 
-                    </select>
-                </div>
-                <input type="checkbox" name="checkServ" id="checkServ">
-                <label for="checkServ">Confirmación</label>
-                <input type="button" value="Reservar" id="btnReservar">
-            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="barberoServ">Barbero:</label>
+                        <select name="barberoServ" id="barberoServ">
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="" type="">Fecha</label>
+                        <input type="date" name="" id="" required>
+                    </div>
+                    <input type="checkbox" name="checkServ" id="checkServ">
+                    <label for="checkServ">Confirmación</label>
+                    <input type="button" value="Reservar" id="btnReservar">
+                </form> 
+            </div>
         </section>
     </main>
     <footer>
@@ -74,6 +76,4 @@
         </div>
     </footer>
 </body>
-
-
 </html>
