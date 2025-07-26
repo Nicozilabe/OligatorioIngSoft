@@ -1,0 +1,1 @@
+//js de cada vista, por ejemplo: login, registro, dashboard, etc.
