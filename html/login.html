@@ -4,20 +4,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/login.css" />
-    <script src="js/system/sistema.js"></script>
-    <script src="js/clases/barbero.js"></script>
-    <script src="js/clases/reserva.js"></script>
-    <script src="js/clases/servicio.js"></script>
-    <script src="js/clases/administrador.js"></script>
-    <script src="js/script/login.js"></script>
     <title>Login</title>
+
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+
+    <script src="../js/system/sistema.js"></script>
+    <script src="../js/clases/barbero.js"></script>
+    <script src="../js/clases/reserva.js"></script>
+    <script src="../js/clases/servicio.js"></script>
+    <script src="../js/clases/administrador.js"></script>
+    <script src="../js/script/login.js"></script>
   </head>
 
   <body>
     <header>
-      <div></div>
+      <button class="abrir-menu" id="abrir"><img src="../img/logos/menu.png" alt="Logo Menu" /></button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><img src="../img/logos/x.png" alt="Logo Cerrar" /></button>
+        <ul class="nav-list">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#">Registrarse</a></li>
+          <li><a href="servicio.html">Servicios</a></li>
+          <li><a href="#">Barberos</a></li>
+          <li><a href="#">Promociones</a></li>
+          <li><a href="contacto.html">Contactanos</a></li>
+          <li><a href="#">Galeria</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section>
@@ -54,4 +69,6 @@
             </a>
         </div>
     </footer>
+    
   </body>
+</html>
