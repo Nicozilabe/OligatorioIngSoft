@@ -2,11 +2,18 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Mapa fijo</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/contacto.css" />
-
+    <title>Mapa fijo</title>
+    
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/contacto.css" />
+    
+    <script src="../js/system/sistema.js"></script>
+    <script src="../js/clases/barbero.js"></script>
+    <script src="../js/clases/reserva.js"></script>
+    <script src="../js/clases/servicio.js"></script>
+    <script src="../js/clases/administrador.js"></script>
+    <script src="../js/script/contacto.js"></script>
     <style>
       #map {
         height: 400px;
@@ -18,7 +25,21 @@
   </head>
   <body>
     <header>
-      <div></div>
+      <button class="abrir-menu" id="abrir"><img src="../img/logos/menu.png" alt="Logo Menu" /></button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><img src="../img/logos/x.png" alt="Logo Cerrar" /></button>
+        <ul class="nav-list">
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/login.html">Login</a></li>
+          <li><a href="#">Registrarse</a></li>
+          <li><a href="/html/servicio.html">Servicios</a></li>
+          <li><a href="/html/reservas.html">Reservar</a></li>
+          <li><a href="#">Barberos</a></li>
+          <li><a href="#">Promociones</a></li>
+          <li><a href="/html/contacto.html">Contactanos</a></li>
+          <li><a href="#">Galeria</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section>
@@ -34,15 +55,16 @@
           <div id="map"></div>
         </div>
         <div>
-            <form id="contactoForm">
-              <div>
+          <form id="contactoForm">
+            <div>
               <label for="nombContacto">Nombre:</label>
               <input type="text" id="nombContacto" name="nombre" required />
             </div>
             <div>
               <label for="ApeContacto">Apellido:</label>
               <input type="tel" id="ApeContacto" name="telefono" required />
-            <div>
+            </div>
+              <div>
               <label for="emailContacto">Email:</label>
               <input type="email" id="emailContacto" name="email" required />
             </div>
@@ -51,13 +73,11 @@
               <textarea id="mensgContacto" name="mensaje" required></textarea>
             </div>  
             <button type="submit">Enviar</button>
-            </form>
-            
+          </form>
         </div>
       </section>
     </main>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../js/script/contacto.js"></script>
   </body>
 </html>

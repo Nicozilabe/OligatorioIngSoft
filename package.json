@@ -1,0 +1,23 @@
+{
+  "name": "oligatorioingsoft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicozilabe/OligatorioIngSoft.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nicozilabe/OligatorioIngSoft/issues"
+  },
+  "homepage": "https://github.com/Nicozilabe/OligatorioIngSoft#readme",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}
