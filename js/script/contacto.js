@@ -27,9 +27,3 @@ cerrar.addEventListener("click", () => {
 const pagina = window.location.pathname.split('/').pop();
 const enlaces = document.querySelectorAll('.nav-list a');
 
-enlaces.forEach(link => {
-  const destino = link.getAttribute('href');
-  if (destino === pagina) {
-    link.classList.add('active');
-  }
-});
