@@ -89,6 +89,7 @@ header{
   .nav.visible{
     opacity: 1;
     visibility: visible;
+    position: fixed;
   }
   .nav-list{
     flex-direction: column;
