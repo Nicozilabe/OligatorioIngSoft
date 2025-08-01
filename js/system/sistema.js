@@ -16,6 +16,7 @@ class Sistema {
     alert("Sistema iniciado");
   }
 }
+
 window.addEventListener('load', () => { 
     marcarLinkActivo();
 })
