@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <title>Mapa fijo</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/contacto.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/contacto.css" />
 
     <style>
       #map {
@@ -18,7 +18,21 @@
   </head>
   <body>
     <header>
-      <div></div>
+      <button class="abrir-menu" id="abrir"><img src="../img/logos/menu.png" alt="Logo Menu" /></button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar"><img src="../img/logos/x.png" alt="Logo Cerrar" /></button>
+        <ul class="nav-list">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="#">Registrarse</a></li>
+          <li><a href="servicio.html">Servicios</a></li>
+          <li><a href="reservas.html">Reservar</a></li>
+          <li><a href="#">Barberos</a></li>
+          <li><a href="#">Promociones</a></li>
+          <li><a href="contacto.html">Contactanos</a></li>
+          <li><a href="#">Galeria</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section>
@@ -34,15 +48,16 @@
           <div id="map"></div>
         </div>
         <div>
-            <form id="contactoForm">
-              <div>
+          <form id="contactoForm">
+            <div>
               <label for="nombContacto">Nombre:</label>
               <input type="text" id="nombContacto" name="nombre" required />
             </div>
             <div>
               <label for="ApeContacto">Apellido:</label>
               <input type="tel" id="ApeContacto" name="telefono" required />
-            <div>
+            </div>
+              <div>
               <label for="emailContacto">Email:</label>
               <input type="email" id="emailContacto" name="email" required />
             </div>
@@ -51,8 +66,7 @@
               <textarea id="mensgContacto" name="mensaje" required></textarea>
             </div>  
             <button type="submit">Enviar</button>
-            </form>
-            
+          </form>
         </div>
       </section>
     </main>
