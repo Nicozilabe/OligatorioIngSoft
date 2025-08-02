@@ -6,3 +6,5 @@ class Administrador {
         this.pass = pass;
     }
 }
+
+module.exports = Administrador;

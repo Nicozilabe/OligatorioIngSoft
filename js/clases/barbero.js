@@ -8,4 +8,4 @@ class Barbero{
     }
 }
 
-
+module.exports = Barbero;

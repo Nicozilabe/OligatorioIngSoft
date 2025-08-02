@@ -1,3 +1,7 @@
+const Administrador = require('../clases/administrador.js');
+const Barbero = require('../clases/barbero.js');
+const Reserva = require('../clases/reserva.js');
+
 class Sistema {
   constructor() {
     if (Sistema.instance) {
@@ -47,7 +51,6 @@ class Sistema {
   }
 
   precargarReservas() {
-
     let reservasEjemplo = [
       new Reserva(
         "Juan Pérez",
@@ -73,8 +76,6 @@ class Sistema {
     this.reservas = (reservasEjemplo);
 
     this.guardarReservas();
-    
-
   }
 
   getReservas() {
@@ -122,7 +123,7 @@ class Sistema {
 
   login(usuario, password) {
     if (usuario && password) {
-      let usuarioEncontrado = sistema.administradores.find(admin =>
+      let usuarioEncontrado = this.administradores.find(admin =>
         admin.userName.toLowerCase() == usuario.toLowerCase() &&
         admin.pass == password
       );
@@ -151,7 +152,10 @@ function marcarLinkActivo() {
   });
 }
 
-
+module.exports = {
+  Sistema,
+  getInstance: Sistema.getInstance,
+};
 
 
 

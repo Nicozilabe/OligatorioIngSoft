@@ -11,3 +11,5 @@ class Reserva{
         this.barbero = barbero;
     }
 }
+
+module.exports = Reserva;
