@@ -34,50 +34,71 @@
         </nav>
     </header>
     <main>
-        <section>
-            <div>
+        <section class="formulario">
+            <form action="" id="formReservas">
                 <h1>Reserve su turno</h1>
-                <form id="formReservas">
-                    <div>
-                        <label for="nombreCliente">Nombre:</label>
-                        <input id="nombreCliente" type="text" required>
-                    </div>   
-                    <div>
-                        <label for="emailCliente">Email:</label>
-                        <input id="emailCliente" type="text" required>
-                    </div>
-                
-                    <div>
-                        <label for="telefonoCliente">Teléfono:</label>
-                        <input id="telefonoCliente" type="text" required>
-                    </div>
-                    <div>
-                        <label for="horaServ">Hora:</label>
-                        <input id="horaServ" type="time" required min="09:00" max="17:30" step="1800">
-                    </div>
-                    <div>
-                        <p>Selecciona los servicios:</p>
-                        <div id="contenedorServicios">
-                        <label><input type="checkbox" name="servicios" value="Corte de pelo"> Corte de pelo</label><br>
-                        <label><input type="checkbox" name="servicios" value="Afeitado"> Corte de Pelo Personalizado</label><br>
-                        <label><input type="checkbox" name="servicios" value="Coloración"> Afeitado y Perfilado</label><br>
-                        <label><input type="checkbox" name="servicios" value="Limpieza facial"> Tinta de Cabello</label><br>
-                    </div>
-                    <div>
-                        <label for="slcBarberos">Barbero:</label>
-                        <select name="barberoServ" id="slcBarberos">
 
-                        </select>
+                <div class="formContainer">
+                    <div class="formCols">
+                        <div class="inputGroup">
+                            <input id="nombreCliente" type="text" required>
+                            <label for="nombreCliente">Nombre:</label>
+                        </div>   
+                        <div class="inputGroup">
+                            <label for="emailCliente">Email:</label>
+                            <input id="emailCliente" type="text" required>
+                        </div>
+                        <div class="horaServ">
+                            <label for="horaServ">Hora:</label>
+                            <input id="horaServ" type="time" required min="09:00" max="17:30" step="1800">
+                        </div>
+                        <div class="fechUsua">
+                            <label for="fechaServ">Fecha</label>
+                            <input type="date" name="fechaServ" id="fechaServ" required>
+                        </div>
+                        <div class="confirmacion">
+                            <label class="checkbox" for="checkServ">Confirmación
+                                <input type="checkbox" name="checkServ" id="checkServ">
+                                <span class="check"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div>
-                        <label for="fechaServ">Fecha</label>
-                        <input type="date" name="fechaServ" id="fechaServ" required>
+                    <div class="formCols">
+                        <div class="inputGroup">
+                            <label for="telefonoCliente">Teléfono:</label>
+                            <input id="telefonoCliente" type="text" required>
+                        </div>
+                        <div class="servUsua">
+                            <p>Selecciona los servicios:</p>
+                            <div id="contenedorServicios" class="checksS">
+                                <label class="checkbox">Corte de pelo
+                                    <input type="checkbox" name="servicios">  <!-- value="Corte de pelo" -->
+                                    <span class="check"></span>
+                                </label>
+                                <label class="checkbox">Corte de Pelo Personalizado
+                                    <input type="checkbox" name="servicios"> <!-- value="Afeitado" --> 
+                                    <span class="check"></span>
+                                </label>
+                                <label class="checkbox">Afeitado y Perfilado
+                                    <input type="checkbox" name="servicios"> <!-- value="Coloración" --> 
+                                    <span class="check"></span>
+                                </label>
+                                <label class="checkbox">Tinta de Cabello
+                                    <input type="checkbox" name="servicios"> <!-- value="Limpieza facial" --> 
+                                    <span class="check"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="barbUsua">
+                            <label for="slcBarberos">Barbero:</label>
+                            <select name="barberoServ" id="slcBarberos">
+
+                            </select>
+                        </div>
                     </div>
-                    <input type="checkbox" name="checkServ" id="checkServ">
-                    <label for="checkServ">Confirmación</label>
                     <input type="button" value="Reservar" id="btnReservar">
-                </form> 
-            </div>
+                </div>
+            </form>
         </section>
     </main>
     <footer class="footer">
