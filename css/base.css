@@ -135,6 +135,7 @@ header{
     opacity: 1;
     visibility: visible;
     position: fixed;
+    z-index: 1;
   }
   .nav-list{
     flex-direction: column;

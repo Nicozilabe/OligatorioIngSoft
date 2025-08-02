@@ -12,13 +12,40 @@ class Sistema {
     Sistema.instance = this;
   }
 
+  static getInstance() {
+    return new Sistema();
+  }
+
   saludar() {
     alert("Sistema iniciado");
+  }
+
+  precargarBarberos() {
+    const data = localStorage.getItem('barberos');
+    if (!data) {
+      // No hay barberos guardados, los precargamos
+      this.barberos = [
+        new Barbero("Carlos", "Rodriguez", "Fade"),
+        new Barbero("Luis", "Martinez", "Barba"),
+        new Barbero("Pedro", "Gonzalez", "Color y corte"),
+      ];
+      this.guardarBarberos();
+    } else {
+      // Hay datos guardados, los cargamos y recreamos instancias
+      this.barberos = JSON.parse(data).map(
+        b => new Barbero(b.nombre, b.apellido, b.especialidad)
+      );
+    }
+  }
+
+  guardarBarberos() {
+    localStorage.setItem('barberos', JSON.stringify(this.barberos));
   }
 }
 
 window.addEventListener('load', () => { 
-    marcarLinkActivo();
+  getInstance();
+  marcarLinkActivo();
 })
 
 function marcarLinkActivo() {
@@ -33,9 +60,5 @@ function marcarLinkActivo() {
   });
 }
 
-const sistema1 = new Sistema();
-const sistema2 = new Sistema();
-
-console.log(sistema1 === sistema2); 
 
 
