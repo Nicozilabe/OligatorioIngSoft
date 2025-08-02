@@ -1,3 +1,4 @@
+let sistema = Sistema.getInstance();
 
 function dqs(valor){
     return document.querySelector(valor);
@@ -6,10 +7,11 @@ function dqs(valor){
 window.addEventListener('load', () => {
     cargarEventos();  
     marcarLinkActivo();
-    
-    let sistema = Sistema.getInstance();
+
     sistema.precargarBarberos();
     cargarSelectBarberos(sistema);
+
+    dqs("#btnReservar").addEventListener("click", reservar);
 })
 
 function cargarEventos() {
@@ -37,11 +39,113 @@ function cargarSelectBarberos(sistema) {
     selectBarberos.innerHTML = '';
 
     sistema.barberos.forEach(barbero => {
-      const option = document.createElement('option');
-      option.value = barbero.id;         // valor del option (id del barbero)
-      option.textContent = `${barbero.nombre} ${barbero.apellido} (${barbero.especialidad})`;  // texto visible
-      selectBarberos.appendChild(option);
+        const option = document.createElement('option');
+        option.value = barbero.id; // valor del option (id del barbero)
+        option.textContent = `${barbero.nombre} ${barbero.apellido}`; // texto visible
+        selectBarberos.appendChild(option);
     });
   }
 }
 
+function reservar() {
+    const confirmado = dqs("#checkServ").checked;
+    if (!confirmado) {
+        alert("Debes aceptar la confirmación para poder reservar.");
+        return;
+    }
+
+    const nombre = dqs("#nombreCliente").value;
+    const telefono = dqs("#telefonoCliente").value;
+    const email = dqs("#emailCliente").value;
+    const fecha = dqs("#fechaServ").value;
+    const hora = dqs("#horaServ").value;
+    const barberoId = dqs("#slcBarberos").value;
+    
+    const checkboxes = document.querySelectorAll('input[name="servicios"]:checked');
+    const serviciosSeleccionados = Array.from(checkboxes).map(cb => cb.value);
+
+    if (!nombre || !telefono || !email || !fecha || !hora || serviciosSeleccionados.length === 0 || !barberoId) {
+        alert("Por favor, completa todos los campos.");
+        return;
+    } else if(!esTelefonoValido(telefono)){
+        alert("Número de teléfono inválido.");
+        return;
+    } else if(!esEmailValido(email)){
+        alert("Email inválido.");
+        return;
+    } else if (!esHoraValida(hora)) {
+        alert("La hora debe estar entre 09:00 y 17:30, en intervalos de 30 minutos.");
+        return;
+    } else if (!esFechaValida(fecha)) {
+        alert("La fecha debe ser hoy o posterior, y no debe ser sábado ni domingo.");
+        return;
+    }
+
+    // Buscar el barbero por ID
+    const barbero = sistema.barberos.find(b => b.id == barberoId);
+    if (!barbero) {
+        alert("Barbero no encontrado.");
+        return;
+    }
+
+    const nuevaReserva = new Reserva(
+        nombre,
+        telefono,
+        email,
+        fecha,
+        hora,
+        serviciosSeleccionados,
+        barbero
+    );
+
+    sistema.reservas.push(nuevaReserva);
+    sistema.guardarReservas?.();
+
+    alert("Reserva guardada correctamente.");
+    dqs("#formReservas").reset();
+}
+
+function esTelefonoValido(telefono) {
+  const regex = /^\+?\d{6,15}$/;
+  return regex.test(telefono.replace(/[\s\-]/g, ""));
+}
+
+function esEmailValido(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
+function esHoraValida(horaStr) {
+    // Validar formato HH:MM (24h) con minutos solo 00 o 30
+    const regex = /^([01]\d|2[0-3]):(00|30)$/;
+    if (!regex.test(horaStr)) return false;
+
+    const [horas, minutos] = horaStr.split(":").map(Number);
+    const totalMinutos = horas * 60 + minutos;
+
+    const min = 9 * 60;    // 09:00 en minutos
+    const max = 17 * 60 + 30; // 17:30 en minutos
+
+    return totalMinutos >= min && totalMinutos <= max;
+}
+
+function esFechaValida(fechaStr) {
+  const hoy = new Date();
+  hoy.setHours(0,0,0,0); // quitar hora para comparar solo fecha
+
+  const fecha = new Date(fechaStr);
+  fecha.setHours(0,0,0,0);
+
+  // No debe ser antes de hoy
+  if (fecha < hoy) {
+    return false;
+  }
+
+  // No debe ser sábado ni domingo
+  const diaSemana = fecha.getDay();
+  if (diaSemana === 0 || diaSemana === 6) {
+    return false;
+  }
+
+  return true;
+}
