@@ -9,6 +9,7 @@ class Sistema {
     this.reservas = [];
     this.servicios = [];
 
+    this.precarga();
     
     Sistema.instance = this;
   }
