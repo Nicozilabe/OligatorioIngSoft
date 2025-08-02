@@ -108,7 +108,6 @@ cargarHeader() {
   }
 
   precargarReservas() {
-
     let reservasEjemplo = [
       new Reserva(
         "Juan Pérez",
@@ -134,8 +133,6 @@ cargarHeader() {
     this.reservas = (reservasEjemplo);
 
     this.guardarReservas();
-    
-
   }
 
   getReservas() {
@@ -183,7 +180,7 @@ cargarHeader() {
 
   login(usuario, password) {
     if (usuario && password) {
-      let usuarioEncontrado = sistema.administradores.find(admin =>
+      let usuarioEncontrado = this.administradores.find(admin =>
         admin.userName.toLowerCase() == usuario.toLowerCase() &&
         admin.pass == password
       );
@@ -212,10 +209,16 @@ function marcarLinkActivo() {
   });
 }
 
+if (typeof require !== 'undefined') {
+  // Si estamos en entorno Node (Jest), usamos require
+  Administrador = require('../clases/administrador.js');
+  Barbero = require('../clases/barbero.js');
+  Reserva = require('../clases/reserva.js');
+}
 
-
-
-
-
-
-
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    Sistema,
+    getInstance: Sistema.getInstance
+  };
+}
