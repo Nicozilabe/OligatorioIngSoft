@@ -7,7 +7,6 @@ class Sistema {
     this.administradores = [];
     this.barberos = [];
     this.reservas = [];
-    this.servicios = [];
 
     Sistema.instance = this;
   }
@@ -41,12 +40,39 @@ class Sistema {
   guardarBarberos() {
     localStorage.setItem('barberos', JSON.stringify(this.barberos));
   }
+
+  guardarReservas() {
+    localStorage.setItem('reservas', JSON.stringify(this.reservas));
+  }
+
+  cargarReservas() {
+    const data = localStorage.getItem('reservas');
+    if (data) {
+      const reservasJson = JSON.parse(data);
+      this.reservas = reservasJson.map(r => {
+        const reserva = new Reserva(
+          r.nombre,
+          r.telefono,
+          r.email,
+          r.fecha,
+          r.hora,
+          r.servicios,
+          r.barbero
+        );
+        reserva.id = r.id; 
+        return reserva;
+      });
+      idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
+    }
+  }
 }
 
 window.addEventListener('load', () => { 
-  getInstance();
-  marcarLinkActivo();
-})
+  const sistema = Sistema.getInstance(); // Obtener la instancia singleton
+  sistema.precargarBarberos();           // Precargar barberos si no están
+  sistema.cargarReservas();               // Cargar reservas guardadas
+  marcarLinkActivo();                     // Marcar el link activo en menú
+});
 
 function marcarLinkActivo() {
   const pagina = window.location.pathname.split('/').pop();
@@ -56,9 +82,5 @@ function marcarLinkActivo() {
     if (destino && destino.endsWith(pagina)) {
       link.classList.add('active');
     }
-
   });
 }
-
-
-
