@@ -35,39 +35,42 @@
     </header>
     <main>
       <section>
-        <div>
+        <div class="formulario">
           <h1>Inicio de Sesión.</h1>
-          <form id="loginForm">
-            <div>
-              <label for="username">Usuario:</label>
+          <form id="loginForm"><!-- Aqui tendria que ir un method post -->
+            <div class="nomUsu">
               <input type="text" id="username" name="username" required />
+              <label for="username">Nombre de Usuario</label>
             </div>
-            <div>
-              <label for="password">Contraseña:</label>
+            <div class="conUsu">
               <input type="password" id="password" name="password" required />
+              <label for="password">Contraseña</label>
             </div>
             <button type="submit">Iniciar Sesión</button>
           </form>
-          <a href="">O cree una cuenta.</a>
+          <div class="RegisDir">
+            <a href="">O cree una cuenta.</a>
+          </div>
         </div>
       </section>
     </main>
-    <footer>
-        <div>
-            <a href="https://x.com">
-                <img src="../img/logos/x_logo.png" alt="Logo X" />
-            </a>
-            <a href="https://www.instagram.com">
-                <img src="../img/logos/ig_logo.png" alt="Logo Instagram" />
-            </a>
-            <a href="https://www.youtube.com">
-                <img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" />
-            </a>
-            <a href="https://www.linkedin.com">
-                <img src="../img/logos/in_logo.png" alt="Logo LinkedIn" />
-            </a>
+    <footer class="footer">
+        <div class="footerContenido">
+            <ul class="cosoFooter">
+                <li class="footerLista">
+                    <a href="https://x.com"><img src="../img/logos/x_logo.png" alt="Logo X" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.instagram.com"><img src="../img/logos/ig_logo.png" alt="Logo Instagram" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.youtube.com"><img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.linkedin.com"><img src="../img/logos/in_logo.png" alt="Logo LinkedIn" /></a>
+                </li>
+            </ul>
         </div>
     </footer>
-    
   </body>
 </html>
