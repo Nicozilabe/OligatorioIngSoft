@@ -43,9 +43,12 @@ function esFechaValida(fechaStr) {
   return true;
 }
 
-module.exports = {
-  esTelefonoValido,
-  esEmailValido,
-  esHoraValida,
-  esFechaValida
-};
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    esTelefonoValido,
+    esEmailValido,
+    esHoraValida,
+    esFechaValida
+  };
+}
+

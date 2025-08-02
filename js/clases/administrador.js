@@ -6,5 +6,6 @@ class Administrador {
         this.pass = pass;
     }
 }
-
-module.exports = Administrador;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Administrador;
+}

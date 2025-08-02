@@ -63,3 +63,4 @@ describe('Validaciones de fecha', () => {
     expect(reserva.esFechaValida('2025-08-03')).toBe(false);
   });
 });
+

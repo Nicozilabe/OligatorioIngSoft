@@ -12,4 +12,6 @@ class Reserva{
     }
 }
 
-module.exports = Reserva;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Reserva;
+}

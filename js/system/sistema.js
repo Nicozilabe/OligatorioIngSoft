@@ -1,7 +1,3 @@
-const Administrador = require('../clases/administrador.js');
-const Barbero = require('../clases/barbero.js');
-const Reserva = require('../clases/reserva.js');
-
 class Sistema {
   constructor() {
     if (Sistema.instance) {
@@ -152,10 +148,16 @@ function marcarLinkActivo() {
   });
 }
 
-module.exports = {
-  Sistema,
-  getInstance: Sistema.getInstance,
-};
+if (typeof require !== 'undefined') {
+  // Si estamos en entorno Node (Jest), usamos require
+  Administrador = require('../clases/administrador.js');
+  Barbero = require('../clases/barbero.js');
+  Reserva = require('../clases/reserva.js');
+}
 
-
-
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    Sistema,
+    getInstance: Sistema.getInstance
+  };
+}
