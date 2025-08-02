@@ -1,4 +1,5 @@
 window.addEventListener('load', () => {
+  sistema = Sistema.getInstance();
   let lat = -34.89864120879972;
   let lon = -56.16871343558183;
 
