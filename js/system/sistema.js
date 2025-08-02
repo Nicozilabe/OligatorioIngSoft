@@ -82,7 +82,6 @@ cargarHeader() {
     this.precargarAdministradores();    
     this.precargarBarberos();
     this.precargarReservas();
-
   }
 
   saludar() {
@@ -108,6 +107,8 @@ cargarHeader() {
   }
 
   precargarReservas() {
+  const data = localStorage.getItem('reservas');
+  if (!data) {
     let reservasEjemplo = [
       new Reserva(
         "Juan Pérez",
@@ -128,12 +129,13 @@ cargarHeader() {
         this.barberoPorID(1)
       )
     ];
-    
-
-    this.reservas = (reservasEjemplo);
-
+    this.reservas = reservasEjemplo;
     this.guardarReservas();
+  } else {
+    // Si hay datos en localStorage, los cargamos
+    this.cargarReservas();
   }
+}
 
   getReservas() {
     return this.reservas;

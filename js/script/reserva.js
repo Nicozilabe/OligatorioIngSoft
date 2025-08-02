@@ -99,8 +99,10 @@ function reservar() {
         barbero
     );
 
+    console.log("Reserva");
     sistema.reservas.push(nuevaReserva);
     sistema.guardarReservas?.();
+    console.log(sistema.reservas);
 
     alert("Reserva guardada correctamente.");
     dqs("#formReservas").reset();
