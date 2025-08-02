@@ -108,9 +108,6 @@ function marcarLinkActivo() {
       link.classList.add('active');
     }
   });
-<<<<<<< HEAD
-}
-=======
 }
 
 
@@ -120,4 +117,3 @@ function marcarLinkActivo() {
 
 
 
->>>>>>> 3bb9f1d0d7d616e681d40062334e8e8df128b652
