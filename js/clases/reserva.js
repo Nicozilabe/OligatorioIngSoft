@@ -11,3 +11,7 @@ class Reserva{
         this.barbero = barbero;
     }
 }
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Reserva;
+}
