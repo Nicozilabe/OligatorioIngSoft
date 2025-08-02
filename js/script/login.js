@@ -1,5 +1,4 @@
 let sistema = new Sistema();
-sistema.precarga();
 function dqs(valor){
     return document.querySelector(valor);
 }
