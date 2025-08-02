@@ -18,7 +18,10 @@ class Sistema {
   }
 
   precarga() {
-    this.precargarAdministradores();
+    this.precargarAdministradores();    
+    this.precargarBarberos();
+    this.precargarReservas();
+
   }
 
   saludar() {
@@ -43,6 +46,44 @@ class Sistema {
     }
   }
 
+  precargarReservas() {
+
+    let reservasEjemplo = [
+      new Reserva(
+        "Juan Pérez",
+        "099123456",
+        "juan@example.com",
+        "2025-08-05",
+        "15:30",
+        ["Corte", "Barba"],
+        this.barberoPorID(2)
+      ),
+      new Reserva(
+        "María Gómez",
+        "098765432",
+        "maria@example.com",
+        "2025-08-06",
+        "10:00",
+        ["Color", "Lavado"],
+        this.barberoPorID(1)
+      )
+    ];
+    
+
+    this.reservas = (reservasEjemplo);
+
+    this.guardarReservas();
+    
+
+  }
+
+  getReservas() {
+    return this.reservas;
+  }
+
+  barberoPorID(id) {
+    return this.barberos.find(barbero => barbero.id === id);
+  }
   guardarBarberos() {
     localStorage.setItem('barberos', JSON.stringify(this.barberos));
   }
