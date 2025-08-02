@@ -4,34 +4,53 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/index.css" />
-
-    <script src="js/system/sistema.js"></script>
-    <script src="js/clases/barbero.js"></script>
-    <script src="js/clases/reserva.js"></script>
-    <script src="js/clases/servicio.js"></script>
-    <script src="js/clases/administrador.js"></script>
-    <script src="js/script/index.js"></script>
     <title>Victor BarberShop</title>
+
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+
+    <script src="../js/system/sistema.js"></script>
+    <script src="/js/clases/barbero.js"></script>
+    <script src="/js/clases/reserva.js"></script>
+    <script src="/js/clases/servicio.js"></script>
+    <script src="/js/clases/administrador.js"></script>
+    <script src="/js/script/index.js"></script>
 </head>
 <body>
-    <header></header>
+    <header>
+        <button class="abrir-menu" id="abrir"><img src="../img/logos/menu.png" alt="Logo Menu" /></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><img src="../img/logos/x.png" alt="Logo Cerrar" /></button>
+            <ul class="nav-list">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/html/login.html">Login</a></li>
+                <li><a href="#">Registrarse</a></li>
+                <li><a href="/html/servicio.html">Servicios</a></li>
+                <li><a href="/html/reservas.html">Reservar</a></li>
+                <li><a href="#">Barberos</a></li>
+                <li><a href="#">Promociones</a></li>
+                <li><a href="/html/contacto.html">Contactanos</a></li>
+                <li><a href="#">Galeria</a></li>
+            </ul>
+        </nav>
+    </header>
     <main></main>
-    <footer>
-        <div>
-            <a href="https://x.com">
-                <img src="../img/logos/x_logo.png" alt="Logo X" />
-            </a>
-            <a href="https://www.instagram.com">
-                <img src="../img/logos/ig_logo.png" alt="Logo Instagram" />
-            </a>
-            <a href="https://www.youtube.com">
-                <img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" />
-            </a>
-            <a href="https://www.linkedin.com">
-                <img src="../img/logos/in_logo.png" alt="Logo LinkedIn" />
-            </a>
+    <footer class="footer">
+        <div class="footerContenido">
+            <ul class="cosoFooter">
+                <li class="footerLista">
+                    <a href="https://x.com"><img src="../img/logos/x_logo.png" alt="Logo X" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.instagram.com"><img src="../img/logos/ig_logo.png" alt="Logo Instagram" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.youtube.com"><img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.linkedin.com"><img src="../img/logos/in_logo.png" alt="Logo LinkedIn" /></a>
+                </li>
+            </ul>
         </div>
     </footer>
 </body>

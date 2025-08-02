@@ -2,8 +2,9 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Mapa fijo</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Mapa fijo</title>
+    
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/contacto.css" />
     
@@ -13,7 +14,6 @@
     <script src="../js/clases/servicio.js"></script>
     <script src="../js/clases/administrador.js"></script>
     <script src="../js/script/contacto.js"></script>
-
     <style>
       #map {
         height: 400px;
@@ -29,14 +29,14 @@
       <nav class="nav" id="nav">
         <button class="cerrar-menu" id="cerrar"><img src="../img/logos/x.png" alt="Logo Cerrar" /></button>
         <ul class="nav-list">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="login.html">Login</a></li>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/login.html">Login</a></li>
           <li><a href="#">Registrarse</a></li>
-          <li><a href="servicio.html">Servicios</a></li>
-          <li><a href="reservas.html">Reservar</a></li>
+          <li><a href="/html/servicio.html">Servicios</a></li>
+          <li><a href="/html/reservas.html">Reservar</a></li>
           <li><a href="#">Barberos</a></li>
           <li><a href="#">Promociones</a></li>
-          <li><a href="contacto.html">Contactanos</a></li>
+          <li><a href="/html/contacto.html">Contactanos</a></li>
           <li><a href="#">Galeria</a></li>
         </ul>
       </nav>
@@ -77,8 +77,24 @@
         </div>
       </section>
     </main>
-
+    <footer class="footer">
+        <div class="footerContenido">
+            <ul class="cosoFooter">
+                <li class="footerLista">
+                    <a href="https://x.com"><img src="../img/logos/x_logo.png" alt="Logo X" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.instagram.com"><img src="../img/logos/ig_logo.png" alt="Logo Instagram" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.youtube.com"><img src="../img/logos/yt_logo.jpeg" alt="Logo Youtube" /></a>
+                </li>
+                <li class="footerLista">
+                    <a href="https://www.linkedin.com"><img src="../img/logos/in_logo.png" alt="Logo LinkedIn" /></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../js/script/contacto.js"></script>
   </body>
 </html>
