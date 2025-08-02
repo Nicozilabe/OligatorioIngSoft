@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
 
   const pagina = window.location.pathname.split('/').pop();
   const enlaces = document.querySelectorAll('.nav-list a');
-}
+});
 
 function enviarCorreo(){
   const nombre = dqs("#nombContacto").value;
