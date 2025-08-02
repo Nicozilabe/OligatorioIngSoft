@@ -4,6 +4,7 @@ function dqs(valor){
 }
 
 window.addEventListener('load', () => {
+    sistema = Sistema.getInstance();
     cargarEventos();  
     marcarLinkActivo();
 })
