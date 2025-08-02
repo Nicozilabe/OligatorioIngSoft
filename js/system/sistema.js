@@ -8,13 +8,19 @@ class Sistema {
     this.barberos = [];
     this.reservas = [];
 
+    this.precarga();
+    
     Sistema.instance = this;
   }
+
+
 
   static getInstance() {
     return new Sistema();
   }
-
+  precarga() {
+    this.precargarAdministradores();
+  }
   saludar() {
     alert("Sistema iniciado");
   }
@@ -40,6 +46,7 @@ class Sistema {
   guardarBarberos() {
     localStorage.setItem('barberos', JSON.stringify(this.barberos));
   }
+<<<<<<< HEAD
 
   guardarReservas() {
     localStorage.setItem('reservas', JSON.stringify(this.reservas));
@@ -65,6 +72,28 @@ class Sistema {
       idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
     }
   }
+=======
+  precargarAdministradores(){
+  let  a = new Administrador("admin", "admin123");
+  this.administradores.push(a);
+  a = new Administrador("Victor", "Victor123");
+  this.administradores.push(a);
+}
+
+login(usuario, password) {
+  if (usuario && password) {
+    let usuarioEncontrado = sistema.administradores.find(admin =>
+      admin.userName.toLowerCase() == usuario.toLowerCase() &&
+      admin.pass == password
+    );
+
+    return usuarioEncontrado || null;
+  }
+  return null;
+}
+
+
+>>>>>>> 3bb9f1d0d7d616e681d40062334e8e8df128b652
 }
 
 window.addEventListener('load', () => { 
@@ -83,4 +112,16 @@ function marcarLinkActivo() {
       link.classList.add('active');
     }
   });
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+
+
+
+
+
+>>>>>>> 3bb9f1d0d7d616e681d40062334e8e8df128b652
