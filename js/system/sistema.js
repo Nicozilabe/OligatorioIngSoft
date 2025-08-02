@@ -4,6 +4,7 @@ class Sistema {
       return Sistema.instance;
     }
 
+    console.log("Iniciando sistema...");
     this.administradores = [];
     this.barberos = [];
     this.reservas = [];
@@ -135,9 +136,18 @@ cargarHeader() {
     this.guardarReservas();
   }
 
-  getReservas() {
-    return this.reservas;
+getReservas() {
+  const reservasJSON = localStorage.getItem("reservas");
+  if (!reservasJSON) return [];
+
+  try {
+    const reservasParseadas = JSON.parse(reservasJSON);
+    return reservasParseadas;
+  } catch (e) {
+    console.error("Error al parsear reservas:", e);
+    return [];
   }
+}
 
   barberoPorID(id) {
     return this.barberos.find(barbero => barbero.id === id);
