@@ -39,27 +39,29 @@
                 <h1>Reserve su turno</h1>
                 <form id="formReservas">
                     <div>
-                        <label for="nombreServ">Nombre:</label>
-                        <input id="nombreServ" type="text" required>
+                        <label for="nombreCliente">Nombre:</label>
+                        <input id="nombreCliente" type="text" required>
                     </div>   
                     <div>
-                        <label for="emailServ">Email:</label>
-                        <input id="emailServ" type="text" required>
+                        <label for="emailCliente">Email:</label>
+                        <input id="emailCliente" type="text" required>
                     </div>
                 
                     <div>
-                        <label for="telefonoServ">Teléfono:</label>
-                        <input id="telefonoServ" type="text" required>
+                        <label for="telefonoCliente">Teléfono:</label>
+                        <input id="telefonoCliente" type="text" required>
                     </div>
                     <div>
                         <label for="horaServ">Hora:</label>
-                        <input id="horaServ" type="text" required>
+                        <input id="horaServ" type="time" required min="09:00" max="17:30" step="1800">
                     </div>
                     <div>
                         <p>Selecciona los servicios:</p>
                         <div id="contenedorServicios">
-
-                        </div>
+                        <label><input type="checkbox" name="servicios" value="Corte de pelo"> Corte de pelo</label><br>
+                        <label><input type="checkbox" name="servicios" value="Afeitado"> Corte de Pelo Personalizado</label><br>
+                        <label><input type="checkbox" name="servicios" value="Coloración"> Afeitado y Perfilado</label><br>
+                        <label><input type="checkbox" name="servicios" value="Limpieza facial"> Tinta de Cabello</label><br>
                     </div>
                     <div>
                         <label for="slcBarberos">Barbero:</label>
@@ -68,8 +70,8 @@
                         </select>
                     </div>
                     <div>
-                        <label for="" type="">Fecha</label>
-                        <input type="date" name="" id="" required>
+                        <label for="fechaServ">Fecha</label>
+                        <input type="date" name="fechaServ" id="fechaServ" required>
                     </div>
                     <input type="checkbox" name="checkServ" id="checkServ">
                     <label for="checkServ">Confirmación</label>
