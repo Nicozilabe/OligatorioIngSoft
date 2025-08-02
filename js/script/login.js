@@ -1,4 +1,5 @@
 let sistema = new Sistema();
+sistema.precarga();
 function dqs(valor){
     return document.querySelector(valor);
 }
@@ -22,6 +23,32 @@ function cargarEventos() {
         cerrar.addEventListener("click", () => {
             nav.classList.remove("visible");
         });
+    }
+
+
+    dqs("#btn-login").addEventListener("click", login);
+    
+
+}
+
+function login() {
+    
+    const username = dqs("#username").value;
+    const password = dqs("#password").value;
+
+    if (username !== "" && password != "") {
+        let usuario = null;
+        usuario = sistema.login(username, password);
+        if(usuario !== null && usuario !== undefined) {
+            localStorage.setItem("usuario", username);
+            localStorage.setItem("id", usuario.id);
+            window.location.href = "../../index.html";
+        }else{
+            dqs("#text-error-login").innerText = "Usuario o contraseña incorrectos.";
+        }
+    
+    }else {
+        dqs("#text-error-login").innerText = "Por favor, complete todos los campos.";
     }
 }
 
