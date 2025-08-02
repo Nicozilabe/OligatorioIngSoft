@@ -26,9 +26,10 @@ function marcarLinkActivo() {
   const enlaces = document.querySelectorAll('.nav-list a');
   enlaces.forEach(link => {
     const destino = link.getAttribute('href');
-    if (destino === pagina) {
+    if (destino && destino.endsWith(pagina)) {
       link.classList.add('active');
     }
+
   });
 }
 
