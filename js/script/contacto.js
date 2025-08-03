@@ -4,6 +4,8 @@ function dqs(valor){
 
 window.addEventListener('load', () => {
 
+  dqs("#btnFormulario").addEventListener("click", enviarCorreo);
+
   sistema = Sistema.getInstance();
   let lat = -34.89864120879972;
 
