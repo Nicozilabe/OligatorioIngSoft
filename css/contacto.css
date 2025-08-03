@@ -2,3 +2,159 @@
   position: relative;
   z-index: 1;
 }
+
+.contactoPagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding-large) var(--padding-medium);
+  box-sizing: border-box;
+}
+
+/* TABS */
+.contactoPagina .tabs {
+  display: none;
+  justify-content: space-around;
+  margin-bottom: calc(var(--padding-medium) * 1.5);
+}
+.contactoPagina .tabBtn {
+  background: var(--color-naranja);
+  border: none;
+  padding: calc(var(--padding-small) * 1.2);
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.contactoPagina .tabBtn.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+.contactoPagina .tabBtn:not(.active) {
+  transform: scale(0.9);
+  opacity: 0.6;
+}
+.contactoPagina .tabBtn img {
+  width: 20px;
+  height: 19px;
+}
+
+/* PANELS */
+.contactoPagina .panels {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--padding-large);
+  margin: var(--padding-medium) 0;
+}
+
+/* GENERAL */
+.contactoPagina .panel {
+  width: 30%;
+  min-width: 370px;
+  max-width: 350px; 
+  min-height: 350px;
+  background: var(--color-naranja);
+  border-radius: var(--border-radius);
+  padding: calc(var(--padding-medium) * 1.5) var(--padding-medium);
+  box-sizing: border-box;
+  display: none;
+}
+.contactoPagina .panel.active {
+  display: block;
+}
+
+/* H Y P */
+.contactoPagina .panel--info h2,
+.contactoPagina .panel--map h2,
+.contactoPagina .panel--form h2 {
+  margin-bottom: var(--padding-medium);
+  text-align: center;
+  color: #0D0D12;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #ffe7a3;
+}
+.contactoPagina .panel--info p {
+  margin-bottom: var(--padding-small);
+  line-height: 1.4;
+  color: var(--color-negro);
+}
+
+/* MAPA */
+.contactoPagina #map {
+  width: 100%;
+  height: 430px;
+  border-radius: var(--border-radius);
+  background: #e0e0e0; 
+}
+
+/* FORM */
+.contactoPagina .inputGroup {
+  margin-bottom: var(--padding-medium);
+}
+.contactoPagina .inputGroup label {
+  display: block;
+  margin-bottom: var(--padding-small);
+  color: var(--color-negro);
+}
+.contactoPagina .inputGroup input,
+.contactoPagina .inputGroup textarea {
+  width: 100%;
+  padding: var(--padding-small);
+  font-size: 16px;
+  border: none;
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+}
+.contactoPagina .inputGroup.mensaje textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* BOTÓN */
+.contactoPagina #btnFormulario {
+  display: block;
+  width: 100%;
+  padding: var(--padding-medium);
+  background: var(--color-negro);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.contactoPagina #btnFormulario:hover {
+  background: var(--color-amarilloPatito);
+  color: var(--color-negro);
+}
+
+/* MOBIL */
+@media (min-width: 768px) {
+  .contactoPagina .tabs {
+    display: none;
+  }
+  .contactoPagina .panels {
+    flex-wrap: nowrap;
+  }
+  .contactoPagina .panel {
+    display: block;
+  }
+}
+
+/* PESTAÑA */
+@media (max-width: 767px) {
+  .contactoPagina .tabs {
+    display: flex;
+  }
+  .contactoPagina .panels {
+    flex-direction: column;
+    gap: var(--padding-medium);
+  }
+  .contactoPagina .panel {
+    width: 100%;
+    max-width: none;
+    display: none;
+  }
+  .contactoPagina .panel.active {
+    display: block;
+  }
+}
