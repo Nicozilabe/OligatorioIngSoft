@@ -83,7 +83,6 @@ cargarHeader() {
     this.precargarAdministradores();    
     this.precargarBarberos();
     this.precargarReservas();
-
   }
 
   saludar() {
@@ -109,6 +108,8 @@ cargarHeader() {
   }
 
   precargarReservas() {
+  const data = localStorage.getItem('reservas');
+  if (!data) {
     let reservasEjemplo = [
       new Reserva(
         "Juan Pérez",
@@ -129,12 +130,13 @@ cargarHeader() {
         this.barberoPorID(1)
       )
     ];
-    
-
-    this.reservas = (reservasEjemplo);
-
+    this.reservas = reservasEjemplo;
     this.guardarReservas();
+  } else {
+    // Si hay datos en localStorage, los cargamos
+    this.cargarReservas();
   }
+}
 
 getReservas() {
   const reservasJSON = localStorage.getItem("reservas");
@@ -177,7 +179,7 @@ getReservas() {
         reserva.id = r.id; 
         return reserva;
       });
-      idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
+      // idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
     }
   }
 
