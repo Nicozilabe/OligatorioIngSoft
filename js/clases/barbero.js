@@ -7,5 +7,6 @@ class Barbero{
         this.especialidad = especialidad;
     }
 }
-
-
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Barbero;
+}
