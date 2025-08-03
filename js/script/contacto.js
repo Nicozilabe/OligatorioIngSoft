@@ -1,8 +1,10 @@
 function dqs(valor){
-    return document.querySelector(valor);
+  return document.querySelector(valor);
 }
 
 window.addEventListener('load', () => {
+
+  dqs("#btnFormulario").addEventListener("click", enviarCorreo);
 
   sistema = Sistema.getInstance();
   let lat = -34.89864120879972;
@@ -33,6 +35,23 @@ window.addEventListener('load', () => {
 
   const pagina = window.location.pathname.split('/').pop();
   const enlaces = document.querySelectorAll('.nav-list a');
+
+
+  //pestañas movil
+  const tabBtns = document.querySelectorAll('.tabBtn');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // activar botón
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // mostrar panel
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.panel')
+        .forEach(panel => panel.classList.remove('active'));
+      dqs(`#${tab}Panel`).classList.add('active');
+    })
+  })
 });
 
 function enviarCorreo(){
@@ -42,11 +61,11 @@ function enviarCorreo(){
   const mensaje = dqs("#mensgContacto").value;
 
   if (!nombre || !apellido || !email || !mensaje) {
-      alert("Por favor, completa todos los campos.");
-      return;
+    alert("Por favor, completa todos los campos.");
+    return;
   } else if(!esEmailValido(email)){
-      alert("Email inválido.");
-      return;
+    alert("Email inválido.");
+    return;
   } 
 
   alert("Correo enviado");
