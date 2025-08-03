@@ -3,12 +3,10 @@ function dqs(valor){
 }
 
 window.addEventListener('load', () => {
-  cargarMapa();
-  dqs("#btnFormulario").addEventListener("click", enviarCorreo);
-})
 
-function cargarMapa(){
-    let lat = -34.89864120879972;
+  sistema = Sistema.getInstance();
+  let lat = -34.89864120879972;
+
   let lon = -56.16871343558183;
 
   const map = L.map('map').setView([lat, lon], 15);
@@ -35,7 +33,7 @@ function cargarMapa(){
 
   const pagina = window.location.pathname.split('/').pop();
   const enlaces = document.querySelectorAll('.nav-list a');
-}
+});
 
 function enviarCorreo(){
   const nombre = dqs("#nombContacto").value;

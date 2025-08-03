@@ -1,9 +1,10 @@
-let sistema = new Sistema();
+
 function dqs(valor){
     return document.querySelector(valor);
 }
 
 window.addEventListener('load', () => {
+    sistema = Sistema.getInstance();
     cargarEventos();  
     marcarLinkActivo();
 })
@@ -31,10 +32,8 @@ function cargarEventos() {
 }
 
 function login() {
-    
     const username = dqs("#username").value;
     const password = dqs("#password").value;
-
     if (username !== "" && password != "") {
         let usuario = null;
         usuario = sistema.login(username, password);
@@ -45,7 +44,6 @@ function login() {
         }else{
             dqs("#text-error-login").innerText = "Usuario o contraseña incorrectos.";
         }
-    
     }else {
         dqs("#text-error-login").innerText = "Por favor, complete todos los campos.";
     }

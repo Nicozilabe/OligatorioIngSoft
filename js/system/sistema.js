@@ -4,24 +4,85 @@ class Sistema {
       return Sistema.instance;
     }
 
+    console.log("Iniciando sistema...");
     this.administradores = [];
     this.barberos = [];
     this.reservas = [];
 
     this.precarga();
-    
+    this.cargarHeader();
     Sistema.instance = this;
   }
 
   static getInstance() {
     return new Sistema();
   }
+cargarHeader() {
+  const usuario = (localStorage.getItem("usuario"));
+  const header = document.querySelector("header");
+
+  if (usuario) {
+    // Header para usuarios logueados
+    header.innerHTML = `
+      <button class="abrir-menu" id="abrir">
+        <img src="../img/logos/menu.png" alt="Logo Menu" />
+      </button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar">
+          <img src="../img/logos/x.png" alt="Logo Cerrar" />
+        </button>
+        <ul class="nav-list">
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/panelAdministrador.html">Panel Administrador</a></li>
+          <li><a href="#" id="cerrarSesion">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    `;
+  } else {
+    // Header para visitantes
+    header.innerHTML = `
+      <button class="abrir-menu" id="abrir">
+        <img src="../img/logos/menu.png" alt="Logo Menu" />
+      </button>
+      <nav class="nav" id="nav">
+        <button class="cerrar-menu" id="cerrar">
+          <img src="../img/logos/x.png" alt="Logo Cerrar" />
+        </button>
+        <ul class="nav-list">
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/html/login.html">Login</a></li>
+          <li><a href="#">Registrarse</a></li>
+          <li><a href="/html/servicio.html">Servicios</a></li>
+          <li><a href="/html/reservas.html">Reservar</a></li>
+          <li><a href="#">Galería</a></li>
+          <li><a href="/html/contacto.html">Contáctanos</a></li>
+        </ul>
+      </nav>
+    `;
+  }
+
+  // Reasignar eventos de abrir/cerrar menú
+  const nav = document.querySelector("#nav");
+  const abrir = document.querySelector("#abrir");
+  const cerrar = document.querySelector("#cerrar");
+
+  abrir.addEventListener("click", () => nav.classList.add("visible"));
+  cerrar.addEventListener("click", () => nav.classList.remove("visible"));
+
+  // Evento para cerrar sesión (solo si está el botón)
+  const btnCerrarSesion = document.querySelector("#cerrarSesion");
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", () => {
+      localStorage.removeItem("usuario");
+      location.reload(); // Recarga para reflejar el cambio
+    });
+  }
+}
 
   precarga() {
     this.precargarAdministradores();    
     this.precargarBarberos();
     this.precargarReservas();
-
   }
 
   saludar() {
@@ -47,7 +108,8 @@ class Sistema {
   }
 
   precargarReservas() {
-
+  const data = localStorage.getItem('reservas');
+  if (!data) {
     let reservasEjemplo = [
       new Reserva(
         "Juan Pérez",
@@ -68,18 +130,26 @@ class Sistema {
         this.barberoPorID(1)
       )
     ];
-    
-
-    this.reservas = (reservasEjemplo);
-
+    this.reservas = reservasEjemplo;
     this.guardarReservas();
-    
-
+  } else {
+    // Si hay datos en localStorage, los cargamos
+    this.cargarReservas();
   }
+}
 
-  getReservas() {
-    return this.reservas;
+getReservas() {
+  const reservasJSON = localStorage.getItem("reservas");
+  if (!reservasJSON) return [];
+
+  try {
+    const reservasParseadas = JSON.parse(reservasJSON);
+    return reservasParseadas;
+  } catch (e) {
+    console.error("Error al parsear reservas:", e);
+    return [];
   }
+}
 
   barberoPorID(id) {
     return this.barberos.find(barbero => barbero.id === id);
@@ -109,7 +179,7 @@ class Sistema {
         reserva.id = r.id; 
         return reserva;
       });
-      idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
+      // idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
     }
   }
 
@@ -122,7 +192,7 @@ class Sistema {
 
   login(usuario, password) {
     if (usuario && password) {
-      let usuarioEncontrado = sistema.administradores.find(admin =>
+      let usuarioEncontrado = this.administradores.find(admin =>
         admin.userName.toLowerCase() == usuario.toLowerCase() &&
         admin.pass == password
       );
@@ -151,7 +221,16 @@ function marcarLinkActivo() {
   });
 }
 
+if (typeof require !== 'undefined') {
+  // Si estamos en entorno Node (Jest), usamos require
+  Administrador = require('../clases/administrador.js');
+  Barbero = require('../clases/barbero.js');
+  Reserva = require('../clases/reserva.js');
+}
 
-
-
-
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    Sistema,
+    getInstance: Sistema.getInstance
+  };
+}
