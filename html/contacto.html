@@ -27,38 +27,47 @@
     <header>
 
     </header>
-    <main>
-      <section>
-        <div>
+    <main class="contactoPagina">
+      <nav class="tabs">
+        <button class="tabBtn active" data-tab="info"><img src="/img/logos/info.png" alt="info"></button>
+        <button class="tabBtn" data-tab="map"><img src="/img/logos/mapW.png" alt="mapa"></button>
+        <button class="tabBtn" data-tab="form"><img src="/img/logos/emailW.png" alt="contacto"></button>
+      </nav>
+      <section class="panels">
+        <div class="panel panel--info active" id="infoPanel">
           <h2>Nuestra información.</h2>
           <p>
-            Para más información, contáctanos a través de nuestras redes
-            sociales.
+            <p>Informacion linda sobre ellos y como aprecian a su publico (?)</p>
+            <p>Dirección: poner calle</p>
+            <p>Teléfono: +598 9123 4567</p>
+            <p>Email: poner gmail</p>
+            <p>Horario: Poner los horarios Ej: Lun-Sáb 09:00-18:00</p>
           </p>
         </div>
-        <div>
+        <div class="panel panel--map" id="mapPanel">
           <h2>Donde encontrarnos.</h2>
           <div id="map"></div>
         </div>
-        <div>
+        <div class="panel panel--form" id="formPanel">
+          <h2>Mantente en contacto</h2>
           <form id="contactoForm">
-            <div>
-              <label for="nombContacto">Nombre:</label>
+            <div class="inputGroup">
+              <label for="nombContacto">Nombre</label>
               <input type="text" id="nombContacto" name="nombre" required />
             </div>
-            <div>
-              <label for="ApeContacto">Apellido:</label>
+            <div class="inputGroup">
+              <label for="ApeContacto">Apellido</label>
               <input type="tel" id="ApeContacto" name="telefono" required />
             </div>
-              <div>
-              <label for="emailContacto">Email:</label>
+            <div class="inputGroup">
+              <label for="emailContacto">Email</label>
               <input type="email" id="emailContacto" name="email" required />
             </div>
-            <div>
-              <label for="mensgContacto">Mensaje:</label>
-              <textarea id="mensgContacto" name="mensaje" required></textarea>
+            <div class="inputGroup mensaje">
+              <label for="mensgContacto">Mensaje</label>
+              <textarea id="mensgContacto" name="mensaje" rows="4" required></textarea>
             </div>  
-            <button id="btnFormulario" type="submit">Enviar</button>
+            <button id="btnFormulario" type="button">Enviar</button>
           </form>
         </div>
       </section>
