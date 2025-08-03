@@ -179,7 +179,7 @@ getReservas() {
         reserva.id = r.id; 
         return reserva;
       });
-      idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
+      // idReserva = this.reservas.length > 0 ? Math.max(...this.reservas.map(r => r.id)) + 1 : 1;
     }
   }
 

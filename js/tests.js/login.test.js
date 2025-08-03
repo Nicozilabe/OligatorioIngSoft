@@ -9,6 +9,7 @@ describe('login() del sistema', () => {
   let sistema;
 
   beforeEach(() => {
+    document.body.innerHTML = `<header id="header"></header>`;
     sistema = Sistema.getInstance();
     sistema.administradores = [];
 
