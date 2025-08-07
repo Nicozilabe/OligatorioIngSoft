@@ -27,8 +27,6 @@ function cargarEventos() {
 
 
     dqs("#btn-login").addEventListener("click", login);
-    
-
 }
 
 function login() {
