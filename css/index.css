@@ -12,7 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 40px;
+    font-size: 60px;
     color: #fff;
-    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 10px 10px 10px #0000;
+    -webkit-text-stroke: 1px black;
 }
