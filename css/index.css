@@ -1,1 +1,18 @@
 /*css por cada "vista" de la aplicacion, por ejemplo: login, registro, dashboard, etc. */
+
+body {
+  background-image: url(../img/logos/fondo.jpg); /* Ruta de la imagen */
+  background-repeat: no-repeat; /* Evitar repetición */
+  background-size: cover; /* Ajustar tamaño */
+  background-position: center; /* Centrar la imagen */
+}
+
+#mainFondo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
