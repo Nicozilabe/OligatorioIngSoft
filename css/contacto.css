@@ -75,7 +75,7 @@
 .contactoPagina .panel--info p {
   margin-bottom: var(--padding-small);
   line-height: 1.4;
-  color: var(--color-negro);
+  color: #0D0D12;
 }
 
 /* MAPA */
@@ -93,7 +93,7 @@
 .contactoPagina .inputGroup label {
   display: block;
   margin-bottom: var(--padding-small);
-  color: var(--color-negro);
+  color: #0D0D12;
 }
 .contactoPagina .inputGroup input,
 .contactoPagina .inputGroup textarea {
@@ -114,7 +114,7 @@
   display: block;
   width: 100%;
   padding: var(--padding-medium);
-  background: var(--color-negro);
+  background: #0D0D12;
   color: var(--color-blanco);
   border: none;
   border-radius: var(--border-radius);
@@ -123,8 +123,8 @@
   transition: background 0.3s;
 }
 .contactoPagina #btnFormulario:hover {
-  background: var(--color-amarilloPatito);
-  color: var(--color-negro);
+  background: #ffe7a3;
+  color: #0D0D12;
 }
 
 /* MOBIL */
