@@ -74,7 +74,8 @@ cargarHeader() {
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", () => {
       localStorage.removeItem("usuario");
-      location.reload(); // Recarga para reflejar el cambio
+      window.location.href = "../../index.html";
+      //location.reload(); // Recarga para reflejar el cambio
     });
   }
 }
@@ -138,18 +139,18 @@ cargarHeader() {
   }
 }
 
-getReservas() {
-  const reservasJSON = localStorage.getItem("reservas");
-  if (!reservasJSON) return [];
+  getReservas() {
+    const reservasJSON = localStorage.getItem("reservas");
+    if (!reservasJSON) return [];
 
-  try {
-    const reservasParseadas = JSON.parse(reservasJSON);
-    return reservasParseadas;
-  } catch (e) {
-    console.error("Error al parsear reservas:", e);
-    return [];
+    try {
+      const reservasParseadas = JSON.parse(reservasJSON);
+      return reservasParseadas;
+    } catch (e) {
+      console.error("Error al parsear reservas:", e);
+      return [];
+    }
   }
-}
 
   barberoPorID(id) {
     return this.barberos.find(barbero => barbero.id === id);
