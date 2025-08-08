@@ -1,10 +1,11 @@
 /*css por cada "vista" de la aplicacion, por ejemplo: login, registro, dashboard, etc. */
 
-body {
+main{
   background-image: url(../img/logos/fondo.jpg); /* Ruta de la imagen */
   background-repeat: no-repeat; /* Evitar repetición */
   background-size: cover; /* Ajustar tamaño */
   background-position: center; /* Centrar la imagen */
+ /* Opacidad de fondo */
 }
 
 #mainFondo{
@@ -13,7 +14,12 @@ body {
     align-items: center;
     height: 100vh;
     font-size: 60px;
-    color: #fff;
-    text-shadow: 10px 10px 10px #0000;
-    -webkit-text-stroke: 1px black;
 }
+
+h1{
+    color: #FFFFFF;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+/* #1A1A1A */
