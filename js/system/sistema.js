@@ -51,10 +51,10 @@ cargarHeader() {
         <ul class="nav-list">
           <li><a href="/index.html">Inicio</a></li>
           <li><a href="/html/login.html">Login</a></li>
-          <li><a href="#">Registrarse</a></li>
+          <li><a href="/html/registrarse.html">Registrarse</a></li>
           <li><a href="/html/servicio.html">Servicios</a></li>
           <li><a href="/html/reservas.html">Reservar</a></li>
-          <li><a href="#">Galería</a></li>
+          <li><a href="/html/galeria.html">Galería</a></li>
           <li><a href="/html/contacto.html">Contáctanos</a></li>
         </ul>
       </nav>
