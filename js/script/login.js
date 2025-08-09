@@ -46,5 +46,3 @@ function login() {
         dqs("#text-error-login").innerText = "Por favor, complete todos los campos.";
     }
 }
-
-

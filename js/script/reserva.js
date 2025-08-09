@@ -1,5 +1,3 @@
-
-
 function dqs(valor){
     return document.querySelector(valor);
 }
