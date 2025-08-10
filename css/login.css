@@ -62,7 +62,9 @@ form .nomUsu{
     transition: 0.5s;
 }
 .nomUsu input:focus ~ label,
-.nomUsu input:focus ~ label{
+.nomUsu input:focus ~ label,
+.nomUsu input:valid ~ label
+{
     top: -13px;
     color: #0D0D12;
 }
@@ -105,10 +107,13 @@ form .conUsu{
     transition: 0.5s;
 }
 .conUsu input:focus ~ label,
-.conUsu input:focus ~ label{
+.conUsu input:focus ~ label,
+.conUsu input:valid ~ label
+{
     top: -13px;
     color: #0D0D12;
 }
+        
 .conUsu input:focus ~ span::before,
 .conUsu input:focus ~ span::before{
     width: 100%;

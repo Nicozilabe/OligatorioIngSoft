@@ -72,6 +72,11 @@ section {
     color: #0D0D12;
 }
 
+.inputGroup input:focus + label,
+.inputGroup input:valid + label {
+  top: -13px;
+  color: #0D0D12;
+}
 
 /* CHECKBOXES */
 .servUsua p {
