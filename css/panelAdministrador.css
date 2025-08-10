@@ -9,7 +9,6 @@
   padding: 16px;
 }
 
-
 .reserva-info {
   border: 1px solid #ccc;
   border-radius: 12px;
@@ -21,11 +20,9 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s ease;
 }
-
 .reserva-info:hover {
   transform: scale(1.01);
 }
-
 .reserva-info p {
   margin: 6px 0;
   line-height: 1.4;
@@ -44,12 +41,10 @@
     max-width: 90%;
     font-size: 15px;
   }
-
   .reserva-info p {
     font-size: 15px;
   }
 }
-
 
 @media (min-width: 768px) {
   #sect-reservas {
