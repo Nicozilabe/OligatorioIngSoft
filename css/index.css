@@ -1,23 +1,33 @@
-/*css por cada "vista" de la aplicacion, por ejemplo: login, registro, dashboard, etc. */
-main{
-  background-image: url(../img/logos/fondo.jpg); /* Ruta de la imagen */
-  background-repeat: no-repeat; /* Evitar repetición */
-  background-size: cover; /* Ajustar tamaño */
-  background-position: center; /* Centrar la imagen */
-  /* Opacidad de fondo */
+main {
+  position: relative; /* necesario para posicionar el ::before */
+  background-image: url(../img/logos/fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-#mainFondo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 60px;
+main::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* cubre todo el main */
+  background-color: #1a1a1a ; /* gris semitransparente */
+  opacity: 0.7;
+  z-index: 1; /* para que quede encima del fondo */
 }
 
-h1{
-    color: #FFFFFF;
-    font-family:'Times New Roman', Times, serif;
+#mainFondo {
+  position: relative; /* para que quede encima del ::before */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 60px;
 }
 
-/* #1A1A1A */
+h1 {
+  position: relative;
+  color: #FFFFFF;
+  font-family: 'Times New Roman', Times, serif;
+  z-index: 3 ;
+}
