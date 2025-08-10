@@ -51,10 +51,10 @@ cargarHeader() {
         <ul class="nav-list">
           <li><a href="/index.html">Inicio</a></li>
           <li><a href="/html/login.html">Login</a></li>
-          <li><a href="#">Registrarse</a></li>
+          <li><a href="/html/registrarse.html">Registrarse</a></li>
           <li><a href="/html/servicio.html">Servicios</a></li>
           <li><a href="/html/reservas.html">Reservar</a></li>
-          <li><a href="#">Galería</a></li>
+          <li><a href="/html/galeria.html">Galería</a></li>
           <li><a href="/html/contacto.html">Contáctanos</a></li>
         </ul>
       </nav>
@@ -74,7 +74,8 @@ cargarHeader() {
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", () => {
       localStorage.removeItem("usuario");
-      location.reload(); // Recarga para reflejar el cambio
+      window.location.href = "../../index.html";
+      //location.reload(); // Recarga para reflejar el cambio
     });
   }
 }
@@ -138,18 +139,18 @@ cargarHeader() {
   }
 }
 
-getReservas() {
-  const reservasJSON = localStorage.getItem("reservas");
-  if (!reservasJSON) return [];
+  getReservas() {
+    const reservasJSON = localStorage.getItem("reservas");
+    if (!reservasJSON) return [];
 
-  try {
-    const reservasParseadas = JSON.parse(reservasJSON);
-    return reservasParseadas;
-  } catch (e) {
-    console.error("Error al parsear reservas:", e);
-    return [];
+    try {
+      const reservasParseadas = JSON.parse(reservasJSON);
+      return reservasParseadas;
+    } catch (e) {
+      console.error("Error al parsear reservas:", e);
+      return [];
+    }
   }
-}
 
   barberoPorID(id) {
     return this.barberos.find(barbero => barbero.id === id);
