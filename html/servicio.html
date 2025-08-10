@@ -19,63 +19,67 @@
     <header>
 
     </header>
-    <main>
-        <section class="servicios-lista">
-            <div id="divServicios">
-                <div id="divTituloServicios">
-                    <h1>Servicios Disponibles</h1>
-                    <div class="buscador-Servicios">
-                        <input type="text" id="buscadorSercicios" placeholder="Buscar servicio...">
-                        <!-- <img src="imgLupitaOIcono" alt="Buscar" id="icono-buscar-servicio"> -->
+    <main class="serviciosPagina">
+        <h1 class="titulo-seccion">Nuestros servicios</h1>
+        <nav class="tabs servicios-tabs">
+            <button class="tabBtn active" data-tab="corte"><img src="/img/logos/Corte.png" alt="Corte"></button>
+            <button class="tabBtn" data-tab="personalizado"><img src="/img/logos/Personalizado.png" alt="Personalizado"></button>
+            <button class="tabBtn" data-tab="afeitado"><img src="/img/logos/afeitado.png" alt="Afeitado"></button>
+            <button class="tabBtn" data-tab="tinta"><img src="/img/logos/tinta.png" alt="Tinta"></button>
+        </nav>
+        <section class="panels servicios-panels">
+            <article class="panel panel--servicio active" id="cortePanel">
+                <figure class="servicio-figure" aria-hidden="true">
+                    <img src="/img/logos/cortePelo.png" alt="Corte de pelo" />
+                </figure>
+                <div class="servicio-body">
+                    <div class="duracion">30 minutos</div>
+                    <h3>Corte de Pelo</h3>
+                    <div class="details">
+                        <p>Corte clásico adaptado a la preferencia del cliente. Ideal para quienes buscan un estilo tradicional o un mantenimiento rápido del look.</p>
+                        <div class="preciosServicios">$500</div>
                     </div>
                 </div>
-                <div id="gridServicios">
-                    <article>
-                        <figure>
-                            <!-- <img src="imgcoso" alt="Imagen de x corte" /> -->
-                        </figure>
-                        <div>
-                            <div class="duracion">30 minutos</div>
-                            <h3>Corte de Pelo</h3>
-                            <p>Corte clásico adaptado a la preferencia del cliente. Ideal para quienes buscan un estilo tradicional o un mantenimiento rápido del look.</p>
-                            <div class="preciosServicios">$500</div>
-                        </div>
-                    </article>
-                    <article>
-                        <figure>
-                            <!-- <img src="imgcoso" alt="Imagen de x corte" /> -->
-                        </figure>
-                        <div>
-                            <div class="duracion">1 hora</div>
-                            <h3>Corte de Pelo Personalizado</h3>
-                            <p>Corte detallado y estilizado según las características del rostro y preferencias del cliente, con asesoramiento personalizado del barbero.</p>
-                            <div class="preciosServicios">$900</div>
-                        </div>
-                    </article>
-                    <article>
-                        <figure>
-                            <!-- <img src="imgcoso" alt="Imagen de x corte" /> -->
-                        </figure>
-                        <div>
-                            <div class="duracion">30 minutos</div>
-                            <h3>Afeitado y Perfilado</h3>
-                            <p>Afeitado clásico con toalla caliente, uso de navaja y perfilado definido para un estilo limpio y elegante.</p>
-                            <div class="preciosServicios">$200</div>
-                        </div>
-                    </article>
-                    <article>
-                        <figure>
-                            <!-- <img src="imgcoso" alt="Imagen de x corte" /> -->
-                        </figure>
-                        <div>
-                            <div class="duracion">1 hora</div>
-                            <h3>Tinta de Cabello</h3>
-                            <p>Aplicación de color sobre el cabello con productos profesionales. Ideal para cubrir canas o cambiar el tono de forma natural y pareja.</p>
-                            <div class="preciosServicios">$700</div>
-                        </div>
-                    </article>
+            </article>
+            <article class="panel panel--servicio" id="personalizadoPanel">
+                <figure class="servicio-figure" aria-hidden="true">
+                    <img src="/img/logos/CortePersonalizado.jpg" alt="Corte personalizado" />
+                </figure>
+                <div class="servicio-body">
+                    <div class="duracion">1 hora</div>
+                    <h3>Corte de Pelo Personalizado</h3>
+                    <div class="details">
+                        <p>Corte detallado y estilizado según las características del rostro y preferencias del cliente, con asesoramiento personalizado del barbero.</p>
+                        <div class="preciosServicios">$900</div>
+                    </div>
                 </div>
-            </div>
+            </article>
+            <article class="panel panel--servicio" id="afeitadoPanel">
+                <figure class="servicio-figure" aria-hidden="true">
+                    <img src="/img/logos/afeitadoyPerf.jpg" alt="Afeitado" />
+                </figure>
+                <div class="servicio-body">
+                    <div class="duracion">30 minutos</div>
+                    <h3>Afeitado y Perfilado</h3>
+                    <div class="details">
+                        <p>Afeitado clásico con toalla caliente, uso de navaja y perfilado definido para un estilo limpio y elegante.</p>
+                        <div class="preciosServicios">$200</div>
+                    </div>
+                </div>
+            </article>
+            <article class="panel panel--servicio" id="tintaPanel">
+                <figure class="servicio-figure" aria-hidden="true">
+                    <img src="/img/logos/tintePelo.jpg" alt="Tinta" />
+                </figure>
+                <div class="servicio-body">
+                    <div class="duracion">1 hora</div>
+                    <h3>Tinta de Cabello</h3>
+                    <div class="details">
+                        <p>Aplicación de color sobre el cabello con productos profesionales. Ideal para cubrir canas o cambiar el tono de forma natural y pareja.</p>
+                        <div class="preciosServicios">$700</div>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
     <footer class="footer">
